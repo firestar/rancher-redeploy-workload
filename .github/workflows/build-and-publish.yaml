@@ -1,8 +1,5 @@
 name: Build and publish
 on:
-  create:
-    tags:
-      - '*'
   push:
     branches:
       - main
