@@ -75,7 +75,9 @@ func main() {
 	http.DefaultTransport.(*http.Transport).TLSClientConfig = &tls.Config{InsecureSkipVerify: config.TlsSkipVerification}
 
 	for _, workload := range workloads {
-		req, err2 := http.NewRequest(http.MethodPost, generateWorkloadRedeployUrl(workload), strings.NewReader("{}"))
+		url := generateWorkloadRedeployUrl(workload);
+		print(url);
+		req, err2 := http.NewRequest(http.MethodPost, url, strings.NewReader("{}"))
 		if err2 != nil {
 			panic(err2)
 		}
