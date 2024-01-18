@@ -28,7 +28,7 @@ var config = &Config{}
 
 func generateWorkloadRedeployUrl(workload string) string {
 	return fmt.Sprintf(
-		"%s/v3/project/%s:%s/workloads/deployment:%s:%s?action=redeploy",
+		"%s/v3/project/%s:%s/workloads/apps.deployment:%s:%s?action=redeploy",
 		config.RancherUrl,
 		config.RancherClusterId,
 		config.RancherProjectId,
